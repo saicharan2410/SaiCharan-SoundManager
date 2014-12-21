@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="page-header">
 <h1>Music List!!!</h1>
-
+</div>
 <table>
   <thead>
     <tr>
@@ -16,13 +16,18 @@
   <tbody>
     <% @musics.each do |music| %>
       <tr>
-        <td><%= music.name %></td>
+        <td><strong><%= music.name %></strong></td>
         <td><%= music.format %></td>
         <td><%= music.length %></td>
         <td><%= music.size %></td>
-        <td><%= link_to 'Show', music %></td>
-        <td><%= link_to 'Edit', edit_music_path(music) %></td>
+        <div class="meta">
+        <td><%= link_to 'Show', music %>|</td>
+      
+      <span class="admin">
+        <td><%= link_to 'Edit', edit_music_path(music) %>|</td> 
         <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+        <span>
       </tr>
     <% end %>
   </tbody>
