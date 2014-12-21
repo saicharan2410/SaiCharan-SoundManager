@@ -9,7 +9,7 @@
       <th>Format</th>
       <th>Length</th>
       <th>Size</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -21,11 +21,11 @@
         <td><%= music.length %></td>
         <td><%= music.size %></td>
         <div class="meta">
-        <td><%= link_to 'Show', music %>|</td>
+        <td><%= link_to 'Details', music %>|</td>
       
       <span class="admin">
         <td><%= link_to 'Edit', edit_music_path(music) %>|</td> 
-        <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div>
         <span>
       </tr>
@@ -33,6 +33,6 @@
   </tbody>
 </table>
 
-<br>
+<hr>
 
 <%= link_to 'New Music', new_music_path %>
