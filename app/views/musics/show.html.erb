@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<p>
+  <strong>Name:</strong>
+  <%= @music.name %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @music.format %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @music.length %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @music.size %>
+</p>
+
+<%= link_to 'Edit', edit_music_path(@music) %> |
+<%= link_to 'Back', musics_path %>
+</div>
