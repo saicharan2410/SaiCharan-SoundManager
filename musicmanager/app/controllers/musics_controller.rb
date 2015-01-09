@@ -1,15 +1,28 @@
 class MusicsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :show, :index]
   before_action :set_music, only: [:show, :edit, :update, :destroy]
 
   # GET /musics
   # GET /musics.json
   def index
     @musics = Music.all
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @musics}
+    end
+
   end
 
   # GET /musics/1
   # GET /musics/1.json
   def show
+    @musics = Music.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @musics}
+    end
   end
 
   # GET /musics/new
